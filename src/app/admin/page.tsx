@@ -29,27 +29,36 @@ export default function AdminPage() {
 
     if (!isLoggedIn) {
         return (
-            <main className="min-h-screen bg-[#EAEAEA] flex items-center justify-center">
-                <div className="bg-white border-4 border-black p-8 shadow-[8px_8px_0px_black] max-w-md w-full">
-                    <h1 className="text-3xl font-black uppercase mb-6 text-center">Admin Access</h1>
-                    <form onSubmit={handleLogin} className="space-y-4">
+        return (
+            <main className="min-h-screen bg-[#EAEAEA] flex items-center justify-center relative z-50">
+                <div className="bg-white border-4 border-black p-10 shadow-[8px_8px_0px_black] max-w-md w-full mx-4">
+                    <h1 className="text-4xl font-black uppercase mb-8 text-center border-b-4 border-black pb-4">
+                        Admin Access
+                    </h1>
+                    <form onSubmit={handleLogin} className="space-y-6">
                         <div>
-                            <label className="block font-mono text-sm font-bold mb-2">PASSWORD</label>
+                            <label className="block font-mono text-sm font-bold mb-2 uppercase">Security Code</label>
                             <input
                                 type="password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                className="w-full p-2 border-2 border-black font-mono focus:bg-yellow-100 outline-none"
-                                placeholder="Enter access code..."
+                                className="w-full p-4 border-4 border-black font-mono text-xl focus:bg-yellow-100 outline-none placeholder:text-gray-400"
+                                placeholder="Enter 123456..."
+                                autoFocus
                             />
                         </div>
-                        {error && <p className="text-red-600 font-mono text-sm font-bold">Access Denied. Invalid Code.</p>}
-                        <Button type="submit" className="w-full font-bold text-lg">
-                            <Lock size={18} className="mr-2" /> UNLOCK
+                        {error && (
+                            <div className="bg-red-100 border-2 border-red-500 p-2 text-center text-red-600 font-mono text-sm font-bold animate-pulse">
+                                ACCESS DENIED
+                            </div>
+                        )}
+                        <Button type="submit" size="lg" className="w-full font-black text-xl py-6 bg-black text-white hover:bg-gray-800">
+                            <Lock size={20} className="mr-2" /> UNLOCK DASHBOARD
                         </Button>
                     </form>
                 </div>
             </main>
+        );
         );
     }
 
