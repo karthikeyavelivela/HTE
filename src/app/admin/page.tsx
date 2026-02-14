@@ -17,17 +17,20 @@ export default function AdminPage() {
     const [error, setError] = useState(false);
     const [activeTab, setActiveTab] = useState("overview");
 
-    const handleLogin = (e: React.FormEvent) => {
-        e.preventDefault();
-        alert("Login Attempt: " + password); // DEBUG
-        console.log("Login attempt:", password);
+    const manualLogin = () => {
+        console.log("Manual login triggered with:", password);
         if (password === "123456") {
-            console.log("Login successful");
             setIsLoggedIn(true);
             setError(false);
         } else {
-            console.log("Login failed");
             setError(true);
+            alert("Incorrect Password!");
+        }
+    };
+
+    const handleKeyDown = (e: React.KeyboardEvent) => {
+        if (e.key === 'Enter') {
+            manualLogin();
         }
     };
 
@@ -38,13 +41,15 @@ export default function AdminPage() {
                     <h1 className="text-4xl font-black uppercase mb-8 text-center border-b-4 border-black pb-4">
                         Admin Access
                     </h1>
-                    <form onSubmit={handleLogin} className="space-y-6">
+                    {/* Replaced form with div to prevent any default submission issues */}
+                    <div className="space-y-6">
                         <div>
                             <label className="block font-mono text-sm font-bold mb-2 uppercase">Security Code</label>
                             <input
                                 type="password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
+                                onKeyDown={handleKeyDown}
                                 className="w-full p-4 border-4 border-black font-mono text-xl focus:bg-yellow-100 outline-none placeholder:text-gray-400"
                                 placeholder="Enter 123456..."
                                 autoFocus
@@ -55,10 +60,14 @@ export default function AdminPage() {
                                 ACCESS DENIED
                             </div>
                         )}
-                        <Button type="submit" size="lg" className="w-full font-black text-xl py-6 bg-black text-white hover:bg-gray-800">
+                        {/* Standard HTML Button to ensure clickability */}
+                        <button
+                            onClick={manualLogin}
+                            className="w-full font-black text-xl py-6 bg-black text-white hover:bg-gray-800 flex items-center justify-center transition-all active:scale-95"
+                        >
                             <Lock size={20} className="mr-2" /> UNLOCK DASHBOARD
-                        </Button>
-                    </form>
+                        </button>
+                    </div>
                 </div>
             </main>
         );
