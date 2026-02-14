@@ -1,0 +1,135 @@
+.galleryHeader {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.filterBar {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.projectGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.folderCard {
+    background: #f0e68c;
+    border: var(--border-thick);
+    position: relative;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    transition: transform 0.2s;
+    box-shadow: var(--shadow-brutal);
+}
+
+.folderCard::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -2px;
+    width: 100px;
+    height: 20px;
+    background: #f0e68c;
+    border: var(--border-thick);
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+}
+
+.folderCard:hover {
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.8);
+}
+
+.statusStamp {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border: 3px solid;
+    padding: 0.25rem 0.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    transform: rotate(15deg);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.statusOngoing {
+    color: var(--color-electric-yellow);
+    /* Fallback #FFE500 */
+    border-color: var(--color-electric-yellow);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.statusCompleted {
+    color: var(--color-hot-pink);
+    /* Fallback #FF006E */
+    border-color: var(--color-hot-pink);
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* Fallback colors */
+.statusOngoing {
+    color: #FFE500;
+    border-color: #FFE500;
+}
+
+.statusCompleted {
+    color: #FF006E;
+    border-color: #FF006E;
+}
+
+/* Project Detail Styles */
+.detailHeader {
+    background: #002b36;
+    /* Blueprint blue */
+    color: #fff;
+    padding: 4rem 2rem;
+    border-bottom: var(--border-thick);
+    margin-bottom: 3rem;
+    position: relative;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.notebookPage {
+    background: #fff;
+    background-image: linear-gradient(#e5e5e5 1px, transparent 1px);
+    background-size: 100% 2rem;
+    padding: 2rem 4rem;
+    box-shadow: var(--shadow-brutal);
+    border: var(--border-thin);
+    position: relative;
+    line-height: 2rem;
+    font-family: var(--font-ibm-plex-mono);
+    /* Handwriting font would be better but keeping mono */
+}
+
+.notebookPage::before {
+    content: '';
+    position: absolute;
+    left: 3rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #ff006e;
+    /* Margin line */
+}
+
+.spiral {
+    position: absolute;
+    left: -10px;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    background: radial-gradient(circle, #333 30%, transparent 40%);
+    background-size: 100% 2rem;
+}

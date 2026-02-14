@@ -1,0 +1,143 @@
+/* Main Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header */
+.heading {
+    font-family: var(--font-space-grotesk);
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Main Grid */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+}
+
+/* Contact Details Cards */
+.card {
+    background: white;
+    border: 4px solid black;
+    box-shadow: 8px 8px 0px black;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0px black;
+}
+
+.icon {
+    background: var(--neon-cyan);
+    padding: 1rem;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardTitle {
+    font-family: var(--font-space-grotesk);
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.cardText {
+    font-family: var(--font-ibm-plex-mono);
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Form Section */
+.formContainer {
+    background: var(--electric-yellow);
+    border: 4px solid black;
+    box-shadow: 12px 12px 0px black;
+    padding: 2.5rem;
+    position: sticky;
+    top: 6rem;
+}
+
+.formTitle {
+    font-family: var(--font-space-grotesk);
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.formGroup {
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    display: block;
+    font-family: var(--font-space-grotesk);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.input,
+.textarea,
+.select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 3px solid black;
+    background: rgba(255, 255, 255, 0.5);
+    font-family: var(--font-ibm-plex-mono);
+    font-size: 1rem;
+    outline: none;
+    transition: background 0.2s;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+    background: white;
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 1rem;
+    background: black;
+    color: white;
+    font-family: var(--font-space-grotesk);
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    border: 3px solid black;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.submitBtn:hover {
+    background: white;
+    color: black;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+}

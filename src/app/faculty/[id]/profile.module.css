@@ -1,0 +1,96 @@
+.profileContainer {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .profileContainer {
+        grid-template-columns: 1fr;
+    }
+}
+
+.photoSection {
+    text-align: center;
+}
+
+.photoFrame {
+    background: var(--pure-white);
+    padding: 1rem 1rem 3rem 1rem;
+    box-shadow: var(--shadow-brutal);
+    transform: rotate(-2deg);
+    margin-bottom: 2rem;
+    border: var(--border-thin);
+}
+
+.photo {
+    width: 100%;
+    aspect-ratio: 1;
+    background: #ddd;
+    margin-bottom: 1rem;
+    border: 1px solid #000;
+}
+
+.namePlate {
+    background: linear-gradient(135deg, #d4af37 0%, #f1c40f 100%);
+    border: var(--border-thick);
+    padding: 1rem;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
+    margin-top: -2rem;
+    position: relative;
+    z-index: 2;
+    transform: rotate(1deg);
+}
+
+.tabsContainer {
+    background: var(--pure-white);
+    border: var(--border-thick);
+    min-height: 600px;
+    box-shadow: var(--shadow-brutal);
+    position: relative;
+}
+
+.tabsHeader {
+    display: flex;
+    overflow-x: auto;
+    border-bottom: var(--border-thick);
+    background: #f0f0f0;
+}
+
+.tab {
+    padding: 1rem 1.5rem;
+    font-family: var(--font-ibm-plex-mono);
+    font-weight: 700;
+    text-transform: uppercase;
+    border-right: var(--border-thin);
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #e0e0e0;
+    white-space: nowrap;
+}
+
+.tab:hover {
+    background: #fff;
+}
+
+.activeTab {
+    background: var(--pure-white);
+    box-shadow: inset 0 4px 0 var(--color-electric-yellow);
+}
+
+.tabContent {
+    padding: 2rem;
+}
+
+.infoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.infoCard {
+    background: #fafafa;
+    border: var(--border-thin);
+    padding: 1rem;
+}

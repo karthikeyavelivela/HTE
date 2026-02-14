@@ -1,0 +1,105 @@
+/* Navbar Container */
+.navContainer {
+    position: fixed;
+    z-index: 9999;
+    /* Max Z-Index */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    /* Let clicks pass through container */
+}
+
+/* Desktop: Top Pill */
+@media (min-width: 768px) {
+    .navContainer {
+        top: 2rem;
+        bottom: auto;
+    }
+}
+
+/* Mobile: Bottom Bar */
+@media (max-width: 767px) {
+    .navContainer {
+        top: auto;
+        bottom: 2rem;
+    }
+}
+
+/* The Pill/Bar */
+.navBar {
+    pointer-events: auto;
+    /* Re-enable clicks */
+    position: relative;
+    display: flex;
+    background-color: var(--pure-white);
+    border: 3px solid var(--pure-black);
+    box-shadow: 4px 4px 0px var(--pure-black);
+    padding: 0.5rem;
+    border-radius: 9999px;
+    transition: transform 0.2s ease;
+}
+
+@media (max-width: 767px) {
+    .navBar {
+        width: 90%;
+        /* Wider on mobile */
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+        box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+        /* Subtle shadow up */
+        border-radius: 20px;
+        border: 3px solid var(--pure-black);
+    }
+}
+
+/* Individual Tab Items */
+.tabItem {
+    position: relative;
+    z-index: 10;
+    display: block;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-space-grotesk);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--pure-black);
+    /* Default text color */
+    transition: color 0.3s ease;
+    mix-blend-mode: normal;
+}
+
+@media (min-width: 768px) {
+    .tabItem {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Active State Text Color (White when cursor is behind) */
+.tabItemActive {
+    color: var(--pure-white) !important;
+}
+
+/* Hover effect for non-active items */
+.tabItem:hover:not(.tabItemActive) {
+    color: var(--electric-yellow);
+}
+
+/* The Sliding Cursor */
+.cursor {
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    z-index: 5;
+    /* Between background and text */
+    background-color: var(--pure-black);
+    border-radius: 9999px;
+}
+
+@media (max-width: 767px) {
+    .cursor {
+        border-radius: 16px;
+    }
+}

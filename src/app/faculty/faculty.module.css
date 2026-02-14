@@ -1,0 +1,71 @@
+.filterBar {
+    background: var(--pure-white);
+    border: var(--border-thick);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-brutal);
+}
+
+.search {
+    flex: 1;
+    border: var(--border-thin);
+    padding: 0.5rem 1rem;
+    font-family: var(--font-ibm-plex-mono);
+    font-size: 1rem;
+    margin-right: 1rem;
+    background: #f0f0f0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--pure-white);
+    border: var(--border-thick);
+    padding: 1.5rem;
+    transition: transform 0.2s ease;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 0px var(--pure-black);
+}
+
+.photoFrame {
+    aspect-ratio: 1;
+    border: var(--border-thin);
+    margin-bottom: 1rem;
+    background: #eee;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:nth-child(even) .photoFrame {
+    transform: rotate(1deg);
+}
+
+.card:nth-child(odd) .photoFrame {
+    transform: rotate(-1deg);
+}
+
+.name {
+    font-family: var(--font-space-grotesk);
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.role {
+    font-family: var(--font-ibm-plex-mono);
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}

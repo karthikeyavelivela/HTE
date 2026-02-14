@@ -1,0 +1,16 @@
+.card {
+    background-color: var(--pure-white);
+    border: var(--border-thick);
+    box-shadow: var(--shadow-brutal);
+    padding: 1.5rem;
+    position: relative;
+}
+
+.hoverable {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hoverable:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0px var(--pure-black);
+}

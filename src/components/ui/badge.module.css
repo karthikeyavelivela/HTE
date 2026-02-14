@@ -1,0 +1,25 @@
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--border-thin);
+    padding: 0.25rem 0.75rem;
+    font-family: var(--font-ibm-plex-mono);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: var(--pure-white);
+    box-shadow: 2px 2px 0px var(--pure-black);
+}
+
+.outline {
+    background-color: transparent;
+}
+
+.filled {
+    background-color: var(--electric-yellow);
+}
+
+.skew {
+    transform: skew(-10deg);
+}
