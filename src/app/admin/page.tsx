@@ -20,7 +20,9 @@ export default function AdminPage() {
 
             <div className={styles.container}>
                 <div className="text-center mb-8">
-                    <h1 className={styles.heading}>Admin Dashboard</h1>
+                    <h1 className="text-4xl font-black uppercase border-4 border-black inline-block pb-2 px-4 bg-white">
+                        Admin Dashboard
+                    </h1>
                 </div>
 
                 <div className="flex justify-center gap-4 mb-12 flex-wrap">

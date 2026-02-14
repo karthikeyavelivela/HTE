@@ -1,71 +1,71 @@
 .filterBar {
-    background: var(--pure-white);
-    border: var(--border-thick);
-    padding: 1rem;
-    margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: var(--shadow-brutal);
+    margin-bottom: 3rem;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .search {
-    flex: 1;
-    border: var(--border-thin);
-    padding: 0.5rem 1rem;
+    width: 100%;
+    height: 48px;
+    padding: 0 1rem;
+    border: 3px solid var(--pure-black);
     font-family: var(--font-ibm-plex-mono);
-    font-size: 1rem;
-    margin-right: 1rem;
-    background: #f0f0f0;
+    font-size: 0.875rem;
+    background: var(--pure-white);
+    outline: none;
+    transition: all 0.2s;
+}
+
+.search:focus {
+    box-shadow: 4px 4px 0px var(--color-electric-yellow);
+    transform: translate(-2px, -2px);
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2rem;
+    padding-bottom: 4rem;
 }
 
 .card {
     background: var(--pure-white);
-    border: var(--border-thick);
+    border: 4px solid var(--pure-black);
     padding: 1.5rem;
-    transition: transform 0.2s ease;
     position: relative;
+    transition: all 0.2s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translate(-4px, -4px);
     box-shadow: 8px 8px 0px var(--pure-black);
 }
 
 .photoFrame {
+    width: 100%;
     aspect-ratio: 1;
-    border: var(--border-thin);
-    margin-bottom: 1rem;
-    background: #eee;
-    position: relative;
+    border: 3px solid var(--pure-black);
+    margin-bottom: 1.5rem;
+    background: #f0f0f0;
     overflow: hidden;
-}
-
-.card:nth-child(even) .photoFrame {
-    transform: rotate(1deg);
-}
-
-.card:nth-child(odd) .photoFrame {
-    transform: rotate(-1deg);
 }
 
 .name {
     font-family: var(--font-space-grotesk);
-    font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
     margin-bottom: 0.25rem;
+    line-height: 1.1;
 }
 
 .role {
     font-family: var(--font-ibm-plex-mono);
     font-size: 0.875rem;
-    color: #666;
+    color: #555;
     margin-bottom: 1rem;
-    text-transform: uppercase;
+    font-weight: 500;
 }

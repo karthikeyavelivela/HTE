@@ -2,20 +2,10 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-    padding-top: 2rem;
+    padding-top: 8rem;
 }
 
-.heading {
-    font-family: var(--font-space-grotesk);
-    font-size: 3.5rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    color: var(--pure-black);
-    text-shadow: 4px 4px 0px var(--electric-yellow);
-    border-bottom: 4px solid var(--pure-black);
-    padding-bottom: 0.5rem;
-}
+
 
 .tabActive {
     background-color: var(--pure-black) !important;
