@@ -3,6 +3,7 @@ import { Space_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import { ChatWidget } from "@/components/chat/chat";
 import { InteractiveGrid } from "@/components/ui/interactive-grid";
+import { Providers } from "@/components/Providers";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -33,9 +34,11 @@ export default function RootLayout({
         <InteractiveGrid />
 
         {/* Content at strict positive z-index to stay above grid */}
-        <div className="relative z-10 w-full min-h-screen">
-          {children}
-        </div>
+        <Providers>
+          <div className="relative z-10 w-full min-h-screen">
+            {children}
+          </div>
+        </Providers>
 
         <ChatWidget />
       </body>

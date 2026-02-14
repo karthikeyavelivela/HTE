@@ -8,11 +8,12 @@ import { SlideTabsNavbar } from '@/components/layout/slide-tabs-navbar';
 import { Footer } from '@/components/layout/footer';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { facultyData } from '@/lib/data/faculty';
+import { useData } from '@/lib/context/DataContext';
 import { Search, Grid, List } from 'lucide-react';
 import styles from './faculty.module.css';
 
 export default function FacultyPage() {
+    const { faculty: facultyData } = useData();
     const [searchTerm, setSearchTerm] = useState("");
     const [view, setView] = useState<'grid' | 'list'>('grid');
 

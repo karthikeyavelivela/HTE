@@ -2,7 +2,7 @@
 
 import { use, useState } from 'react'; // React.use for unwrapping params
 import { notFound } from 'next/navigation';
-import { facultyData } from '@/lib/data/faculty';
+import { useData } from '@/lib/context/DataContext';
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { Container } from '@/components/layout/container';
@@ -14,6 +14,7 @@ import { cn } from '@/lib/utils';
 
 export default function ProfilePage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = use(params);
+    const { faculty: facultyData } = useData();
     const faculty = facultyData.find((f) => f.id === id);
     const [activeTab, setActiveTab] = useState("info");
 

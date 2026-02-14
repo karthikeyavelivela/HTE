@@ -8,11 +8,12 @@ import { Container } from '@/components/layout/container';
 import { Section } from '@/components/layout/section';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { projectsData } from '@/lib/data/projects';
+import { useData } from '@/lib/context/DataContext';
 import { cn } from '@/lib/utils';
 import styles from './projects.module.css';
 
 export default function ProjectsPage() {
+    const { projects: projectsData } = useData();
     const [filter, setFilter] = useState("All");
     const categories = ["All", "Ongoing", "Completed", "Student", "Faculty"];
 

@@ -5,10 +5,11 @@ import { Container } from '@/components/layout/container';
 import { Section } from '@/components/layout/section';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { facultyData } from '@/lib/data/faculty';
+import { useData } from '@/lib/context/DataContext';
 import styles from './faculty-carousel.module.css';
 
 export function FacultyCarousel() {
+    const { faculty: facultyData } = useData();
     const scrollRef = useRef<HTMLDivElement>(null);
 
     // Filter faculty to show only those marked for homepage

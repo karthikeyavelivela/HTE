@@ -6,11 +6,13 @@ import { Footer } from '@/components/layout/footer';
 import { Container } from '@/components/layout/container';
 import { Section } from '@/components/layout/section';
 import { Award, Trophy, Star, Zap } from 'lucide-react';
-import { awardsData, AwardItem } from '@/lib/data/awards';
+import { useData } from '@/lib/context/DataContext';
+import { AwardItem } from '@/lib/data/awards';
 import { cn } from '@/lib/utils';
 import styles from './awards.module.css';
 
 export default function AwardsPage() {
+    const { awards: awardsData } = useData();
     const [filter, setFilter] = useState<string>("All");
 
     const categories = ["All", "Department", "Hackathon", "Research", "Student"];

@@ -5,10 +5,11 @@ import { Footer } from '@/components/layout/footer';
 import { Container } from '@/components/layout/container';
 import { Section } from '@/components/layout/section';
 import { Button } from '@/components/ui/button';
-import { eventsData } from '@/lib/data/events';
+import { useData } from '@/lib/context/DataContext';
 import styles from './events.module.css';
 
 export default function EventsPage() {
+    const { events: eventsData } = useData();
     const upcomingEvents = eventsData.filter(e => e.type === "Upcoming");
     const pastEvents = eventsData.filter(e => e.type === "Past");
 

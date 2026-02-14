@@ -8,13 +8,14 @@ import { Container } from '@/components/layout/container';
 import { Section } from '@/components/layout/section';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { projectsData } from '@/lib/data/projects';
+import { useData } from '@/lib/context/DataContext';
 import styles from './projects.module.css';
 import { ArrowLeft, Github, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ProjectDetail({ params }: { params: Promise<{ id: string }> }) {
     const { id } = use(params);
+    const { projects: projectsData } = useData();
     const project = projectsData.find(p => p.id === id);
 
     if (!project) notFound();
