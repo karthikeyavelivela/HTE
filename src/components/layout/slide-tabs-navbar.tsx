@@ -66,26 +66,26 @@ const Tab = ({ children, setPosition, href }: { children: React.ReactNode, setPo
     const Icon = ICONS[children as string];
 
     return (
-        <Link href={href} legacyBehavior>
-            <li
-                ref={ref}
-                onMouseEnter={() => {
-                    if (!ref?.current) return;
-                    const { width } = ref.current.getBoundingClientRect();
-                    setPosition({
-                        left: ref.current.offsetLeft,
-                        width,
-                        opacity: 1,
-                    });
-                }}
-                className={`${styles.tabItem} ${isActive ? styles.tabItemActive : ''}`}
-            >
+        <li
+            ref={ref}
+            onMouseEnter={() => {
+                if (!ref?.current) return;
+                const { width } = ref.current.getBoundingClientRect();
+                setPosition({
+                    left: ref.current.offsetLeft,
+                    width,
+                    opacity: 1,
+                });
+            }}
+            className={`${styles.tabItem} ${isActive ? styles.tabItemActive : ''}`}
+        >
+            <Link href={href} className="flex items-center justify-center w-full h-full">
                 <span className="hidden md:block">{children}</span>
                 <span className="md:hidden block">
                     {Icon ? <Icon size={20} /> : children}
                 </span>
-            </li>
-        </Link>
+            </Link>
+        </li>
     );
 };
 
