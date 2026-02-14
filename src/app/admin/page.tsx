@@ -29,7 +29,6 @@ export default function AdminPage() {
 
     if (!isLoggedIn) {
         return (
-        return (
             <main className="min-h-screen bg-[#EAEAEA] flex items-center justify-center relative z-50">
                 <div className="bg-white border-4 border-black p-10 shadow-[8px_8px_0px_black] max-w-md w-full mx-4">
                     <h1 className="text-4xl font-black uppercase mb-8 text-center border-b-4 border-black pb-4">
@@ -58,7 +57,6 @@ export default function AdminPage() {
                     </form>
                 </div>
             </main>
-        );
         );
     }
 

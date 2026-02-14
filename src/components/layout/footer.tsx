@@ -97,12 +97,12 @@ const FlipLink = ({ children, href }: { children: string; href: string }) => {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative block overflow-hidden whitespace-nowrap text-2xl font-black uppercase text-white"
+            className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-9xl text-white"
             style={{
-                lineHeight: 0.9,
+                lineHeight: 0.75,
             }}
         >
-            <div>
+            <div className="relative z-10">
                 {children.split("").map((l, i) => (
                     <motion.span
                         variants={{
