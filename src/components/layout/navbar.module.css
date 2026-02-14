@@ -77,11 +77,12 @@
     }
 }
 
-/* Active State Text Color (White when cursor is behind) */
+/* Active State Text Color */
 .tabItemActive {
-    color: var(--pure-white) !important;
-    z-index: 20;
-    mix-blend-mode: difference;
+    color: var(--pure-black) !important;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
 }
 
 /* Hover effect for non-active items */

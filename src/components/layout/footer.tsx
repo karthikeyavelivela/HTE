@@ -97,9 +97,9 @@ const FlipLink = ({ children, href }: { children: string; href: string }) => {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-6xl md:text-7xl lg:text-8xl text-white"
+            className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-9xl text-white"
             style={{
-                lineHeight: 0.9,
+                lineHeight: 0.75,
             }}
         >
             <div className="relative z-10">

@@ -69,7 +69,7 @@ export default function AwardsPage() {
             </section>
 
             {/* Gallery Section */}
-            <Section>
+            <div className="py-12 bg-[#EAEAEA]">
                 <Container>
                     <div className="flex flex-col items-center mb-12">
                         <h1 className="text-5xl font-black uppercase mb-8 border-4 border-black inline-block pb-3 px-6 bg-white shadow-[6px_6px_0px_black]">Awards Gallery</h1>
@@ -115,7 +115,7 @@ export default function AwardsPage() {
                         ))}
                     </div>
                 </Container>
-            </Section>
+            </div>
             <Footer />
         </main>
     );
