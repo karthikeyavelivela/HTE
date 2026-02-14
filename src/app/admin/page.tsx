@@ -19,10 +19,13 @@ export default function AdminPage() {
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
+        console.log("Login attempt:", password);
         if (password === "123456") {
+            console.log("Login successful");
             setIsLoggedIn(true);
             setError(false);
         } else {
+            console.log("Login failed");
             setError(true);
         }
     };

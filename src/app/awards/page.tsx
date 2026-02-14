@@ -24,45 +24,45 @@ export default function AwardsPage() {
             <SlideTabsNavbar />
 
             {/* Infinite Scroll Awards Section */}
-            <section className="bg-black py-16 overflow-hidden border-b-4 border-black">
+            <section className="bg-black py-8 overflow-hidden border-b-4 border-black">
                 <div className={styles.scroller}>
                     <div className={styles.scrollContent}>
                         {/* Card 1: Best Faculty */}
-                        <div className="min-w-[300px] h-[400px] bg-[#1a1a1a] border-4 border-yellow-400 p-8 flex flex-col items-center justify-center gap-6 shadow-[8px_8px_0px_#FFE500]">
-                            <Award className="text-yellow-400 w-24 h-24" />
-                            <h3 className="text-3xl font-black text-white uppercase text-center">Best Faculty</h3>
-                            <p className="text-gray-400 font-mono text-center">Excellence in Teaching & Research</p>
+                        <div className="min-w-[300px] h-[400px] bg-white border-4 border-black p-8 flex flex-col items-center justify-center gap-6 shadow-[8px_8px_0px_white]">
+                            <Award className="text-black w-24 h-24" />
+                            <h3 className="text-3xl font-black text-black uppercase text-center">Best Faculty</h3>
+                            <p className="text-gray-600 font-mono text-center">Excellence in Teaching & Research</p>
                         </div>
 
                         {/* Card 2: Best Project */}
-                        <div className="min-w-[300px] h-[400px] bg-[#1a1a1a] border-4 border-yellow-400 p-8 flex flex-col items-center justify-center gap-6 shadow-[8px_8px_0px_#FFE500]">
-                            <Trophy className="text-yellow-400 w-24 h-24" />
-                            <h3 className="text-3xl font-black text-white uppercase text-center">Best Project</h3>
-                            <p className="text-gray-400 font-mono text-center">Innovation & Impact</p>
+                        <div className="min-w-[300px] h-[400px] bg-white border-4 border-black p-8 flex flex-col items-center justify-center gap-6 shadow-[8px_8px_0px_white]">
+                            <Trophy className="text-black w-24 h-24" />
+                            <h3 className="text-3xl font-black text-black uppercase text-center">Best Project</h3>
+                            <p className="text-gray-600 font-mono text-center">Innovation & Impact</p>
                         </div>
 
                         {/* Card 3: New Skill Palavar */}
-                        <div className="min-w-[300px] h-[400px] bg-[#1a1a1a] border-4 border-yellow-400 p-8 flex flex-col items-center justify-center gap-6 shadow-[8px_8px_0px_#FFE500]">
-                            <Zap className="text-yellow-400 w-24 h-24" />
-                            <h3 className="text-3xl font-black text-white uppercase text-center">New Skill Palavar</h3>
-                            <p className="text-gray-400 font-mono text-center">Emerging Tech Mastery</p>
+                        <div className="min-w-[300px] h-[400px] bg-white border-4 border-black p-8 flex flex-col items-center justify-center gap-6 shadow-[8px_8px_0px_white]">
+                            <Zap className="text-black w-24 h-24" />
+                            <h3 className="text-3xl font-black text-black uppercase text-center">New Skill Palavar</h3>
+                            <p className="text-gray-600 font-mono text-center">Emerging Tech Mastery</p>
                         </div>
 
                         {/* Duplicate Cards for Smooth Loop */}
-                        <div className="min-w-[300px] h-[400px] bg-[#1a1a1a] border-4 border-yellow-400 p-8 flex flex-col items-center justify-center gap-6 shadow-[8px_8px_0px_#FFE500]">
-                            <Award className="text-yellow-400 w-24 h-24" />
-                            <h3 className="text-3xl font-black text-white uppercase text-center">Best Faculty</h3>
-                            <p className="text-gray-400 font-mono text-center">Excellence in Teaching & Research</p>
+                        <div className="min-w-[300px] h-[400px] bg-white border-4 border-black p-8 flex flex-col items-center justify-center gap-6 shadow-[8px_8px_0px_white]">
+                            <Award className="text-black w-24 h-24" />
+                            <h3 className="text-3xl font-black text-black uppercase text-center">Best Faculty</h3>
+                            <p className="text-gray-600 font-mono text-center">Excellence in Teaching & Research</p>
                         </div>
-                        <div className="min-w-[300px] h-[400px] bg-[#1a1a1a] border-4 border-yellow-400 p-8 flex flex-col items-center justify-center gap-6 shadow-[8px_8px_0px_#FFE500]">
-                            <Trophy className="text-yellow-400 w-24 h-24" />
-                            <h3 className="text-3xl font-black text-white uppercase text-center">Best Project</h3>
-                            <p className="text-gray-400 font-mono text-center">Innovation & Impact</p>
+                        <div className="min-w-[300px] h-[400px] bg-white border-4 border-black p-8 flex flex-col items-center justify-center gap-6 shadow-[8px_8px_0px_white]">
+                            <Trophy className="text-black w-24 h-24" />
+                            <h3 className="text-3xl font-black text-black uppercase text-center">Best Project</h3>
+                            <p className="text-gray-600 font-mono text-center">Innovation & Impact</p>
                         </div>
-                        <div className="min-w-[300px] h-[400px] bg-[#1a1a1a] border-4 border-yellow-400 p-8 flex flex-col items-center justify-center gap-6 shadow-[8px_8px_0px_#FFE500]">
-                            <Zap className="text-yellow-400 w-24 h-24" />
-                            <h3 className="text-3xl font-black text-white uppercase text-center">New Skill Palavar</h3>
-                            <p className="text-gray-400 font-mono text-center">Emerging Tech Mastery</p>
+                        <div className="min-w-[300px] h-[400px] bg-white border-4 border-black p-8 flex flex-col items-center justify-center gap-6 shadow-[8px_8px_0px_white]">
+                            <Zap className="text-black w-24 h-24" />
+                            <h3 className="text-3xl font-black text-black uppercase text-center">New Skill Palavar</h3>
+                            <p className="text-gray-600 font-mono text-center">Emerging Tech Mastery</p>
                         </div>
                     </div>
                 </div>

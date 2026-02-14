@@ -80,6 +80,8 @@
 /* Active State Text Color (White when cursor is behind) */
 .tabItemActive {
     color: var(--pure-white) !important;
+    z-index: 20;
+    mix-blend-mode: difference;
 }
 
 /* Hover effect for non-active items */
