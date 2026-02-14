@@ -1,9 +1,9 @@
 "use client";
 
-import Link from 'next/link';
-import { Container } from './container';
-import { MapPin, Mail, Phone } from 'lucide-react';
-import styles from './footer.module.css';
+import Link from "next/link";
+import { Container } from "./container";
+import { MapPin, Mail, Phone } from "lucide-react";
+import styles from "./footer.module.css";
 import { motion } from "framer-motion";
 
 export const Footer = () => {
@@ -13,14 +13,13 @@ export const Footer = () => {
                 <div className={styles.mainGrid}>
                     {/* Brand Section */}
                     <div className={styles.brandSection}>
-                        <h2 className={styles.logo}>
-                            CSE-HTE
-                        </h2>
+                        <h2 className={styles.logo}>CSE-HTE</h2>
                         <p className={styles.tagline}>
                             &lt;Innovate. Engineer. Entrepreneur. /&gt;
                         </p>
                         <p className={styles.description}>
-                            Department of Computer Science & Engineering with Honours in Tech Entrepreneurship
+                            Department of Computer Science &amp; Engineering with Honours in
+                            Tech Entrepreneurship
                         </p>
                     </div>
 
@@ -28,12 +27,24 @@ export const Footer = () => {
                     <div className={styles.linksSection}>
                         <h3 className={styles.sectionTitle}>Quick Links</h3>
                         <ul className={styles.linksList}>
-                            <li><Link href="/" className={styles.link}>Home</Link></li>
-                            <li><Link href="/faculty" className={styles.link}>Faculty</Link></li>
-                            <li><Link href="/projects" className={styles.link}>Projects</Link></li>
-                            <li><Link href="/awards" className={styles.link}>Awards</Link></li>
-                            <li><Link href="/events" className={styles.link}>Events</Link></li>
-                            <li><Link href="/clubs" className={styles.link}>Clubs</Link></li>
+                            <li>
+                                <Link href="/" className={styles.link}>Home</Link>
+                            </li>
+                            <li>
+                                <Link href="/faculty" className={styles.link}>Faculty</Link>
+                            </li>
+                            <li>
+                                <Link href="/projects" className={styles.link}>Projects</Link>
+                            </li>
+                            <li>
+                                <Link href="/awards" className={styles.link}>Awards</Link>
+                            </li>
+                            <li>
+                                <Link href="/events" className={styles.link}>Events</Link>
+                            </li>
+                            <li>
+                                <Link href="/clubs" className={styles.link}>Clubs</Link>
+                            </li>
                         </ul>
                     </div>
 
@@ -56,15 +67,15 @@ export const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Social Media - RevealLinks Style */}
+                    {/* Social Media – RevealLinks */}
                     <div className={styles.socialSection}>
                         <h3 className={styles.sectionTitle}>Follow Us</h3>
-                        <div className="grid gap-2">
+                        <section className="grid place-content-center gap-2 px-2 py-4 text-white">
                             <FlipLink href="https://twitter.com">Twitter</FlipLink>
                             <FlipLink href="https://linkedin.com">Linkedin</FlipLink>
                             <FlipLink href="https://facebook.com">Facebook</FlipLink>
                             <FlipLink href="https://instagram.com">Instagram</FlipLink>
-                        </div>
+                        </section>
                     </div>
                 </div>
 
@@ -86,6 +97,8 @@ export const Footer = () => {
     );
 };
 
+/* ── RevealLinks FlipLink (exact user code, adapted to theme) ── */
+
 const DURATION = 0.25;
 const STAGGER = 0.025;
 
@@ -97,21 +110,15 @@ const FlipLink = ({ children, href }: { children: string; href: string }) => {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-9xl text-white"
-            style={{
-                lineHeight: 0.75,
-            }}
+            className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-9xl"
+            style={{ lineHeight: 0.75 }}
         >
-            <div className="relative z-10">
+            <div>
                 {children.split("").map((l, i) => (
                     <motion.span
                         variants={{
-                            initial: {
-                                y: 0,
-                            },
-                            hovered: {
-                                y: "-100%",
-                            },
+                            initial: { y: 0 },
+                            hovered: { y: "-100%" },
                         }}
                         transition={{
                             duration: DURATION,
@@ -125,16 +132,12 @@ const FlipLink = ({ children, href }: { children: string; href: string }) => {
                     </motion.span>
                 ))}
             </div>
-            <div className="absolute inset-0 text-[#8B0000]">
+            <div className="absolute inset-0">
                 {children.split("").map((l, i) => (
                     <motion.span
                         variants={{
-                            initial: {
-                                y: "100%",
-                            },
-                            hovered: {
-                                y: 0,
-                            },
+                            initial: { y: "100%" },
+                            hovered: { y: 0 },
                         }}
                         transition={{
                             duration: DURATION,
