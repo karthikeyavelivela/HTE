@@ -23,33 +23,49 @@ export default function AwardsPage() {
         <main className="min-h-screen bg-[#EAEAEA]">
             <SlideTabsNavbar />
 
-            {/* Trophy Case Section */}
-            <section className={styles.trophyCase}>
-                <Container>
-                    <h2 className="text-4xl font-black text-white uppercase text-center mb-12">
-                        Hall of Fame
-                    </h2>
-                    <div className={styles.trophyGrid}>
-                        <div className={styles.trophy}>
-                            <Trophy size={64} />
-                            <div className="absolute bottom-4 text-center w-full font-mono text-sm opacity-80">
-                                Best Dept 2024
-                            </div>
+            {/* Infinite Scroll Awards Section */}
+            <section className="bg-black py-16 overflow-hidden border-b-4 border-black">
+                <div className={styles.scroller}>
+                    <div className={styles.scrollContent}>
+                        {/* Card 1: Best Faculty */}
+                        <div className="min-w-[300px] h-[400px] bg-[#1a1a1a] border-4 border-yellow-400 p-8 flex flex-col items-center justify-center gap-6 shadow-[8px_8px_0px_#FFE500]">
+                            <Award className="text-yellow-400 w-24 h-24" />
+                            <h3 className="text-3xl font-black text-white uppercase text-center">Best Faculty</h3>
+                            <p className="text-gray-400 font-mono text-center">Excellence in Teaching & Research</p>
                         </div>
-                        <div className={styles.trophy}>
-                            <Star size={64} />
-                            <div className="absolute bottom-4 text-center w-full font-mono text-sm opacity-80">
-                                Innovation Hub
-                            </div>
+
+                        {/* Card 2: Best Project */}
+                        <div className="min-w-[300px] h-[400px] bg-[#1a1a1a] border-4 border-yellow-400 p-8 flex flex-col items-center justify-center gap-6 shadow-[8px_8px_0px_#FFE500]">
+                            <Trophy className="text-yellow-400 w-24 h-24" />
+                            <h3 className="text-3xl font-black text-white uppercase text-center">Best Project</h3>
+                            <p className="text-gray-400 font-mono text-center">Innovation & Impact</p>
                         </div>
-                        <div className={styles.trophy}>
-                            <Zap size={64} />
-                            <div className="absolute bottom-4 text-center w-full font-mono text-sm opacity-80">
-                                Tech Excellence
-                            </div>
+
+                        {/* Card 3: New Skill Palavar */}
+                        <div className="min-w-[300px] h-[400px] bg-[#1a1a1a] border-4 border-yellow-400 p-8 flex flex-col items-center justify-center gap-6 shadow-[8px_8px_0px_#FFE500]">
+                            <Zap className="text-yellow-400 w-24 h-24" />
+                            <h3 className="text-3xl font-black text-white uppercase text-center">New Skill Palavar</h3>
+                            <p className="text-gray-400 font-mono text-center">Emerging Tech Mastery</p>
+                        </div>
+
+                        {/* Duplicate Cards for Smooth Loop */}
+                        <div className="min-w-[300px] h-[400px] bg-[#1a1a1a] border-4 border-yellow-400 p-8 flex flex-col items-center justify-center gap-6 shadow-[8px_8px_0px_#FFE500]">
+                            <Award className="text-yellow-400 w-24 h-24" />
+                            <h3 className="text-3xl font-black text-white uppercase text-center">Best Faculty</h3>
+                            <p className="text-gray-400 font-mono text-center">Excellence in Teaching & Research</p>
+                        </div>
+                        <div className="min-w-[300px] h-[400px] bg-[#1a1a1a] border-4 border-yellow-400 p-8 flex flex-col items-center justify-center gap-6 shadow-[8px_8px_0px_#FFE500]">
+                            <Trophy className="text-yellow-400 w-24 h-24" />
+                            <h3 className="text-3xl font-black text-white uppercase text-center">Best Project</h3>
+                            <p className="text-gray-400 font-mono text-center">Innovation & Impact</p>
+                        </div>
+                        <div className="min-w-[300px] h-[400px] bg-[#1a1a1a] border-4 border-yellow-400 p-8 flex flex-col items-center justify-center gap-6 shadow-[8px_8px_0px_#FFE500]">
+                            <Zap className="text-yellow-400 w-24 h-24" />
+                            <h3 className="text-3xl font-black text-white uppercase text-center">New Skill Palavar</h3>
+                            <p className="text-gray-400 font-mono text-center">Emerging Tech Mastery</p>
                         </div>
                     </div>
-                </Container>
+                </div>
             </section>
 
             {/* Gallery Section */}

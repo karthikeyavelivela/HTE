@@ -58,8 +58,14 @@
     font-size: 1.5rem;
     font-weight: 800;
     text-transform: uppercase;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
     line-height: 1.1;
+    background: var(--color-electric-yellow);
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    transform: skew(-2deg);
+    border: 2px solid var(--pure-black);
+    box-shadow: 4px 4px 0px var(--pure-black);
 }
 
 .role {

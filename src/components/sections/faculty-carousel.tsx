@@ -25,7 +25,7 @@ export function FacultyCarousel() {
     };
 
     return (
-        <Section>
+        <Section style={{ paddingTop: 0, paddingBottom: '4rem' }}>
             <Container>
                 <h2 className="text-4xl font-black mb-12 uppercase border-4 border-black inline-block pb-2 px-4 bg-white">
                     Featured Faculty

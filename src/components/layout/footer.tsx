@@ -2,8 +2,9 @@
 
 import Link from 'next/link';
 import { Container } from './container';
-import { Github, Linkedin, Twitter, Instagram, Mail, MapPin, Phone } from 'lucide-react';
+import { MapPin, Mail, Phone } from 'lucide-react';
 import styles from './footer.module.css';
+import { motion } from "framer-motion";
 
 export const Footer = () => {
     return (
@@ -55,22 +56,14 @@ export const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Social Media */}
+                    {/* Social Media - RevealLinks Style */}
                     <div className={styles.socialSection}>
                         <h3 className={styles.sectionTitle}>Follow Us</h3>
-                        <div className={styles.socialLinks}>
-                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                                <Twitter size={24} />
-                            </a>
-                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                                <Linkedin size={24} />
-                            </a>
-                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                                <Github size={24} />
-                            </a>
-                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                                <Instagram size={24} />
-                            </a>
+                        <div className="grid gap-2">
+                            <FlipLink href="https://twitter.com">Twitter</FlipLink>
+                            <FlipLink href="https://linkedin.com">Linkedin</FlipLink>
+                            <FlipLink href="https://facebook.com">Facebook</FlipLink>
+                            <FlipLink href="https://instagram.com">Instagram</FlipLink>
                         </div>
                     </div>
                 </div>
@@ -90,5 +83,71 @@ export const Footer = () => {
                 </div>
             </Container>
         </footer>
+    );
+};
+
+const DURATION = 0.25;
+const STAGGER = 0.025;
+
+const FlipLink = ({ children, href }: { children: string; href: string }) => {
+    return (
+        <motion.a
+            initial="initial"
+            whileHover="hovered"
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative block overflow-hidden whitespace-nowrap text-2xl font-black uppercase text-white"
+            style={{
+                lineHeight: 0.9,
+            }}
+        >
+            <div>
+                {children.split("").map((l, i) => (
+                    <motion.span
+                        variants={{
+                            initial: {
+                                y: 0,
+                            },
+                            hovered: {
+                                y: "-100%",
+                            },
+                        }}
+                        transition={{
+                            duration: DURATION,
+                            ease: "easeInOut",
+                            delay: STAGGER * i,
+                        }}
+                        className="inline-block"
+                        key={i}
+                    >
+                        {l}
+                    </motion.span>
+                ))}
+            </div>
+            <div className="absolute inset-0 text-[#8B0000]">
+                {children.split("").map((l, i) => (
+                    <motion.span
+                        variants={{
+                            initial: {
+                                y: "100%",
+                            },
+                            hovered: {
+                                y: 0,
+                            },
+                        }}
+                        transition={{
+                            duration: DURATION,
+                            ease: "easeInOut",
+                            delay: STAGGER * i,
+                        }}
+                        className="inline-block"
+                        key={i}
+                    >
+                        {l}
+                    </motion.span>
+                ))}
+            </div>
+        </motion.a>
     );
 };

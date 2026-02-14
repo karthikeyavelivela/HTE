@@ -12,7 +12,46 @@ import { Edit, Trash2, Plus, Lock } from 'lucide-react';
 import styles from './admin.module.css';
 
 export default function AdminPage() {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState(false);
     const [activeTab, setActiveTab] = useState("overview");
+
+    const handleLogin = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (password === "123456") {
+            setIsLoggedIn(true);
+            setError(false);
+        } else {
+            setError(true);
+        }
+    };
+
+    if (!isLoggedIn) {
+        return (
+            <main className="min-h-screen bg-[#EAEAEA] flex items-center justify-center">
+                <div className="bg-white border-4 border-black p-8 shadow-[8px_8px_0px_black] max-w-md w-full">
+                    <h1 className="text-3xl font-black uppercase mb-6 text-center">Admin Access</h1>
+                    <form onSubmit={handleLogin} className="space-y-4">
+                        <div>
+                            <label className="block font-mono text-sm font-bold mb-2">PASSWORD</label>
+                            <input
+                                type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                className="w-full p-2 border-2 border-black font-mono focus:bg-yellow-100 outline-none"
+                                placeholder="Enter access code..."
+                            />
+                        </div>
+                        {error && <p className="text-red-600 font-mono text-sm font-bold">Access Denied. Invalid Code.</p>}
+                        <Button type="submit" className="w-full font-bold text-lg">
+                            <Lock size={18} className="mr-2" /> UNLOCK
+                        </Button>
+                    </form>
+                </div>
+            </main>
+        );
+    }
 
     return (
         <main className="min-h-screen bg-[#EAEAEA]">
@@ -42,8 +81,8 @@ export default function AdminPage() {
                                     <div className="w-full h-full bg-gray-200 flex items-center justify-center text-xs">[PHOTO]</div>
                                 </div>
                                 <div>
-                                    <h3 className="text-2xl font-black uppercase mb-2">Dr. Karthikeya V.</h3>
-                                    <p className="font-mono text-sm mb-4">Head of Department</p>
+                                    <h3 className="text-2xl font-black uppercase mb-2">Dr. Ashwin Kumar</h3>
+                                    <p className="font-mono text-sm mb-4">Head of Department, Deputy HOD & Professor</p>
                                     <p className="text-sm">Leading the department with a vision for innovation and excellence in tech entrepreneurship.</p>
                                 </div>
                             </div>
