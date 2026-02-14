@@ -25,7 +25,7 @@ export default function ProjectsPage() {
     return (
         <main className="min-h-screen bg-[#EAEAEA]">
             <SlideTabsNavbar />
-            <Section>
+            <Section className="bg-gray-100">
                 <Container>
                     <div className="flex flex-col items-center mb-12">
                         <h1 className="text-5xl font-black uppercase mb-8 border-4 border-black inline-block pb-3 px-6 bg-white shadow-[6px_6px_0px_black]">Project Archive</h1>

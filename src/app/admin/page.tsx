@@ -28,95 +28,143 @@ export default function AdminPage() {
                     <Button onClick={() => setActiveTab("faculty")} className={activeTab === "faculty" ? styles.tabActive : styles.tabInactive}>Faculty</Button>
                     <Button onClick={() => setActiveTab("projects")} className={activeTab === "projects" ? styles.tabActive : styles.tabInactive}>Projects</Button>
                     <Button onClick={() => setActiveTab("events")} className={activeTab === "events" ? styles.tabActive : styles.tabInactive}>Events</Button>
+                    <Button onClick={() => setActiveTab("clubs")} className={activeTab === "clubs" ? styles.tabActive : styles.tabInactive}>Clubs</Button>
                 </div >
 
-                {activeTab === "overview" && <OverviewSection />
-                }
-                {activeTab === "faculty" && <DataTable title="Faculty Directory" data={facultyData} columns={['id', 'name', 'role', 'cabin']} />}
-                {activeTab === "projects" && <DataTable title="Projects Archive" data={projectsData} columns={['id', 'title', 'category', 'status']} />}
-                {activeTab === "events" && <DataTable title="Event Calendar" data={eventsData} columns={['id', 'title', 'date', 'type']} />}
+                {/* Content Area with Background */}
+                <div className="bg-white border-4 border-black p-8 shadow-[8px_8px_0px_black]">
+                    {activeTab === "overview" && (
+                        <div className="space-y-8">
+                            <div className={styles.execCard}>
+                                <div className={styles.hodPhotoFrame}>
+                                    <div className="w-full h-full bg-gray-200 flex items-center justify-center text-xs">[PHOTO]</div>
+                                </div>
+                                <div>
+                                    <h3 className="text-2xl font-black uppercase mb-2">Dr. Karthikeya V.</h3>
+                                    <p className="font-mono text-sm mb-4">Head of Department</p>
+                                    <p className="text-sm">Leading the department with a vision for innovation and excellence in tech entrepreneurship.</p>
+                                </div>
+                            </div>
 
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div className="border-4 border-black p-6 bg-yellow-100">
+                                    <div className="text-4xl font-black mb-2">{facultyData.length}</div>
+                                    <div className="font-mono text-sm uppercase">Faculty Members</div>
+                                </div>
+                                <div className="border-4 border-black p-6 bg-cyan-100">
+                                    <div className="text-4xl font-black mb-2">{projectsData.length}</div>
+                                    <div className="font-mono text-sm uppercase">Active Projects</div>
+                                </div>
+                                <div className="border-4 border-black p-6 bg-pink-100">
+                                    <div className="text-4xl font-black mb-2">{eventsData.length}</div>
+                                    <div className="font-mono text-sm uppercase">Events</div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {activeTab === "faculty" && (
+                        <DataTable
+                            title="Faculty Management"
+                            data={facultyData}
+                            columns={["name", "role", "email", "publications"]}
+                            isFacultyTable={true}
+                        />
+                    )}
+
+                    {activeTab === "projects" && (
+                        <DataTable
+                            title="Projects Management"
+                            data={projectsData}
+                            columns={["id", "title", "status", "category"]}
+                        />
+                    )}
+
+                    {activeTab === "events" && (
+                        <DataTable
+                            title="Events Management"
+                            data={eventsData}
+                            columns={["id", "title", "date", "type"]}
+                        />
+                    )}
+
+                    {activeTab === "clubs" && (
+                        <DataTable
+                            title="Clubs Management"
+                            data={clubsData}
+                            columns={["id", "name", "members"]}
+                        />
+                    )}
+                </div>
             </div >
             <Footer />
         </main >
     );
 }
 
-function OverviewSection() {
-    const hod = facultyData.find(f => f.role === "Head of Department") || facultyData[0];
+// DataTable Component
+function DataTable({ title, data, columns, isFacultyTable = false }: {
+    title: string;
+    data: any[];
+    columns: string[];
+    isFacultyTable?: boolean;
+}) {
     return (
-        <div className="space-y-12">
-            <div className={styles.execCard}>
-                <div className={styles.hodPhotoFrame}>
-                    <div className="w-full h-full flex items-center justify-center bg-gray-300 font-mono text-5xl">👤</div>
-                </div>
-                <div className="flex-1 text-left">
-                    <h2 className="text-3xl font-black uppercase mb-1">{hod.name}</h2>
-                    <p className="font-mono text-lg text-gray-600 mb-6 uppercase tracking-widest">{hod.role}</p>
-                    <div className="p-4 bg-yellow-100 border-l-4 border-yellow-500 font-mono text-sm">
-                        SYSTEM STATUS: ALL SYSTEMS OPERATIONAL.
-                    </div>
-                </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-white p-6 border-4 border-black shadow-[4px_4px_0_black]">
-                    <h3 className="font-bold uppercase text-gray-500">Total Students</h3>
-                    <div className="text-4xl font-black">450</div>
-                </div>
-                <div className="bg-white p-6 border-4 border-black shadow-[4px_4px_0_black]">
-                    <h3 className="font-bold uppercase text-gray-500">Research Grants</h3>
-                    <div className="text-4xl font-black">$2.5M</div>
-                </div>
-                <div className="bg-white p-6 border-4 border-black shadow-[4px_4px_0_black]">
-                    <h3 className="font-bold uppercase text-gray-500">Active Clubs</h3>
-                    <div className="text-4xl font-black">{clubsData.length}</div>
-                </div>
-            </div>
-        </div>
-    );
-}
-
-function DataTable({ title, data, columns }: { title: string, data: any[], columns: string[] }) {
-    const isFacultyTable = title === "Faculty Directory";
-
-    return (
-        <div className="bg-white border-4 border-black shadow-[8px_8px_0_black] p-6">
-            <div className="flex justify-between items-center mb-6">
+        <div className="space-y-6">
+            <div className="flex justify-between items-center border-b-4 border-black pb-4">
                 <h2 className="text-2xl font-black uppercase">{title}</h2>
-                <Button size="sm" className="flex items-center gap-2 bg-black text-white hover:bg-gray-800"><Plus size={16} /> Add New</Button>
+                <Button className="bg-yellow-400 hover:bg-yellow-500 text-black border-4 border-black font-bold">
+                    <Plus size={16} className="mr-2" /> ADD NEW
+                </Button>
             </div>
 
             <div className="overflow-x-auto">
-                <table className="w-full font-mono text-sm text-left">
-                    <thead>
-                        <tr className="bg-black text-white">
+                <table className="w-full border-4 border-black">
+                    <thead className="bg-black text-white">
+                        <tr>
                             {columns.map(col => (
-                                <th key={col} className="p-3 uppercase">{col}</th>
+                                <th key={col} className="p-3 text-left uppercase font-mono text-sm border-2 border-white">
+                                    {col}
+                                </th>
                             ))}
-                            {isFacultyTable && <th className="p-3 uppercase">Show on Homepage</th>}
-                            <th className="p-3 uppercase text-right">Actions</th>
+                            {isFacultyTable && (
+                                <th className="p-3 text-left uppercase font-mono text-sm border-2 border-white">
+                                    Show on Homepage
+                                </th>
+                            )}
+                            <th className="p-3 text-left uppercase font-mono text-sm border-2 border-white">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         {data.map((item, idx) => (
-                            <tr key={idx} className="border-b border-gray-200 hover:bg-gray-50">
+                            <tr key={idx} className="border-b-2 border-black hover:bg-gray-50">
                                 {columns.map(col => (
-                                    <td key={col} className="p-3 truncate max-w-[200px]">{item[col]}</td>
+                                    <td key={col} className="p-3 font-mono text-sm border-r-2 border-black">
+                                        {item[col]}
+                                    </td>
                                 ))}
                                 {isFacultyTable && (
-                                    <td className="p-3">
+                                    <td className="p-3 border-r-2 border-black">
                                         <input
                                             type="checkbox"
                                             checked={item.showOnHomepage || false}
-                                            onChange={() => {/* TODO: Implement toggle */ }}
+                                            onChange={() => {
+                                                // TODO: Implement toggle functionality
+                                                console.log('Toggle homepage visibility for:', item.name);
+                                            }}
                                             className="w-5 h-5 cursor-pointer"
                                         />
                                     </td>
                                 )}
-                                <td className="p-3 text-right">
-                                    <button className="text-blue-600 hover:text-blue-800 mr-2"><Edit size={16} /></button>
-                                    <button className="text-red-600 hover:text-red-800"><Trash2 size={16} /></button>
+                                <td className="p-3">
+                                    <div className="flex gap-2">
+                                        <button className="p-2 border-2 border-black hover:bg-cyan-200">
+                                            <Edit size={16} />
+                                        </button>
+                                        <button className="p-2 border-2 border-black hover:bg-red-200">
+                                            <Trash2 size={16} />
+                                        </button>
+                                    </div>
                                 </td>
                             </tr>
                         ))}
